@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular IMC</h1>
+    
+    <script>
+        // Recebe o peso do usuário
+        var peso = parseFloat(prompt("Digite o seu peso(kg):"));
+        // Recebe a altura do usuário
+        var altura = parseFloat(prompt("Digite a segunda nota:"));
+        // Calculando a média
+        var imc = peso / altura**2
+        // Adiciona um parágrafo na tela com o resultado do cálculo.
+        document.body.innerHTML += "<p>Seu IMC é: " + imc + "</p>";
+    </script>
+</body>
+</html>
