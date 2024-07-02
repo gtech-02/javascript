@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        let emailDoUsuarioCadastrado = 'teste@mail.com';
+        let senhaDoUsuarioCadastro = "1234";
+
+        let emailDoLogin = prompt("Digite seu email");
+        let senhaDoLogin = prompt("Digite sua senha");
+
+        if(emailDoLogin === emailDoUsuarioCadastrado && senhaDoLogin === senhaDoUsuarioCadastro) {
+                alert("Usuario logado!");
+        } else {
+            let emailDoLogin = prompt("Digite seu email");
+            let senhaDoLogin = prompt("Digite sua senha");
+            if(emailDoLogin === emailDoUsuarioCadastrado && senhaDoLogin === senhaDoUsuarioCadastro) {
+                alert("Usuario logado!");
+            } else {
+                alert("Usuario Bloqueado");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

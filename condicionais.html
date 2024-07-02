@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais</title>
+    <script>
+        
+        let notaMinima = 7;
+
+        let nota1 = 3;
+        let nota2 = 7;
+        let media = (nota1 + nota2) / 2;
+        console.log("A média do aluno é: " + media);
+        let alunoPassou = media > notaMinima;
+
+        console.log(alunoPassou);
+
+        /* if (alunoPassou) {
+            alert("Aluno passou");
+        } else {
+            alert("Aluno não passou");
+        }*/
+
+        if(media > notaMinima) {
+            alert("Aluno Passou")
+        } else if(media === notaMinima) {
+            alert("Aluno ta na média")
+        } else {
+            alert("Aluno não passou");
+        }
+
+        console.log("Qualquer outra coisa quqe vier depois")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
