@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
@@ -14,11 +12,16 @@
 </head>
 <body>
     <h1>Calcular IMC</h1>
+    
     <script>
-        let peso = parseFloat(prompt('Digite seu peso: '))
-        let altura = parseFloat(prompt('Digite sua altura: '))
-        let imc = peso / altura ** 2
-        document.body.innerHTML += '<p> Seu IMC é: ' + imc + '</p>'
+        // Recebe o peso do usuário
+        var peso = parseFloat(prompt("Digite o seu peso(kg):"));
+        // Recebe a altura do usuário
+        var altura = parseFloat(prompt("Digite a segunda nota:"));
+        // Calculando a média
+        var imc = peso / altura**2
+        // Adiciona um parágrafo na tela com o resultado do cálculo.
+        document.body.innerHTML += "<p>Seu IMC é: " + imc + "</p>";
     </script>
 </body>
 </html>

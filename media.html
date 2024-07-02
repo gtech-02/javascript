@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcular Média do Aluno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Média do Aluno</h1>
+    
+    <script>
+        // Recebe a primeira nota do usuário
+        var nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        // Recebe a segunda nota do usuário
+        var nota2 = parseFloat(prompt("Digite a segunda nota:"));
+        // Calculando a média
+        var media = (nota1 + nota2) / 2
+        // Adiciona um parágrafo na tela com o resultado da média.
+        document.body.innerHTML += "<p>A média do aluno é: " + media + "</p>";
+    </script>
+</body>
+</html>
