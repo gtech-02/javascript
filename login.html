@@ -8,20 +8,29 @@
         let emailDoUsuarioCadastrado = 'teste@mail.com';
         let senhaDoUsuarioCadastro = "1234";
 
-        let emailDoLogin = prompt("Digite seu email");
-        let senhaDoLogin = prompt("Digite sua senha");
+        // null
+        // undefined
+        // "" -> string vazia
+        // 0
+        // false
 
-        if(emailDoLogin === emailDoUsuarioCadastrado && senhaDoLogin === senhaDoUsuarioCadastro) {
-                alert("Usuario logado!");
-        } else {
+        let emailDoLogin = prompt("Digite seu email");
+
+        let senhaDoLogin = prompt("Digite sua senha");
+        let texto = '';
+
+        if((emailDoLogin !== emailDoUsuarioCadastrado) && senhaDoLogin !== senhaDoUsuarioCadastro) {
             let emailDoLogin = prompt("Digite seu email");
             let senhaDoLogin = prompt("Digite sua senha");
             if(emailDoLogin === emailDoUsuarioCadastrado && senhaDoLogin === senhaDoUsuarioCadastro) {
-                alert("Usuario logado!");
+                texto = "Usuario logado!"
             } else {
-                alert("Usuario Bloqueado");
+                texto = "Usuario Bloqueado"
             }
+        } else {
+            texto = "Usuario logado!"
         }
+        alerta(texto);
 
     </script>
 </head>

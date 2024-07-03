@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe o número que estou pensando</title>
+    <script>
+        let pensamento = parseInt(Math.random() * 130);
+
+        console.log(pensamento);
+
+        for(let index = 10; index == 10;) {
+            let numero = prompt("Qual numero estou pensando?");
+
+            if(numero != pensamento) {
+                alert("Você errou!");
+                continue;
+            } 
+
+            alert("Você acertou!");
+            break;
+        }
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
