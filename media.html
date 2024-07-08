@@ -14,10 +14,23 @@
     <h1>Calcular Média do Aluno</h1>
     
     <script>
+
+        function msg (etapa, aplicarMargem, margem = 0.5) {
+            let nota = prompt("Digite a " + etapa + " nota:");
+
+            if(aplicarMargem) {
+                return parseFloat(nota) * margem;
+            } else {
+                return parseFloat(nota);
+            }
+        }
+
         // Recebe a primeira nota do usuário
-        var nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        var nota1 = msg("Primeira", false, 1.2);
+
         // Recebe a segunda nota do usuário
-        var nota2 = parseFloat(prompt("Digite a segunda nota:"));
+        var nota2 = msg("Segunda", false);
+
         // Calculando a média
         var media = (nota1 + nota2) / 2
         // Adiciona um parágrafo na tela com o resultado da média.

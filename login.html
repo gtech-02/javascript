@@ -6,13 +6,174 @@
     <title>Login</title>
     <script>
 
+        function exibirNome(nome = "Felipe") {
+            alert("Meu nome é: " + nome);
+        }
+        
+
+        // if
+        // if else
+        // for
+        // while
+
+        exibirNome("Gustavo");
+        exibirNome();
+        exibirNome("Gabriela");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+    
+    window.addEventListener('load', function() {
+
+        emails = ["maria@gmail.com", "lucas@gmail.com", "emilia@gmail.com"];
+        senhas = ["maria123", "lucas123", "emilia123"];
+
+        let buscarUsuario = true;
+
+        do {
+            let emailinserido = prompt("insira seu email ")
+            let senhainserida = prompt("insira sua senha ")
+            
+            let usuarioEncontrado = emails.indexOf(emailinserido)
+            let senhaEncontrada = senhas.indexOf(senhainserida)
+
+            if(usuarioEncontrado >= 0 && senhaEncontrada >= 0 && usuarioEncontrado === senhaEncontrada){
+                document.body.textContent = 'Usuário logado com sucesso!';
+                break;
+            }
+            
+            alert("Tente novamente!");
+
+        } while(!buscarUsuario)
+    })
+*/
+    /*
+    while(!buscarUsuario) {
+        let emailinserido = prompt("insira seu email ")
+        let senhainserida = prompt("insira sua senha ")
+        
+        let usuarioEncontrado = emails.indexOf(emailinserido)
+        let senhaEncontrada = senhas.indexOf(senhainserida)
+
+        if(usuarioEncontrado >= 0 && senhaEncontrada >= 0 && usuarioEncontrado === senhaEncontrada){
+            alert("Cadastro válido");
+            break;
+        }
+        
+        alert("Tente novamente!");
+
+    }*/
+
+/*
+    emails = ["maria@gmail.com", "lucas@gmail.com", "emilia@gmail.com"];
+    senhas = ["maria123", "lucas123", "emilia123"];
+
+    for (;;) {
+        let indexEmail;
+        let emailLogin = prompt("Digite seu email: ");
+
+        for (let i = 0; i < emails.length; i++) {
+            if (emailLogin == emails[i]) {
+                indexEmail = i;
+                break
+            }
+        }
+
+        if (indexEmail == undefined) {
+            alert("Email não encontrado. Tente novamente.");
+        } else {
+            let senha = prompt("Digite sua senha: ");
+
+            if (senha === senhas[indexEmail]) {
+                console.log("Logado com sucesso!");
+                break;
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        }
+    }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // 1. Criar uma lista de emails falsos
         // 2. Criar uma lista de senhas falsas
+
         // 3. Receber email e senha por prompt
-        // 4. Verificar se o email existe dentro da lista de emails
-        // 5. Verificar se a senha existe dentro da lista de senhas
+        //let email = prompt("Digite seu email");
+        //let senha = prompt("Digite sua senha");
+
+       // let emails = ["teste@mail.com", "teste2@mail.com"];
+        // let senhas = ["1234", "4321"];
+
+        
         // 6. Enquanto o email ou senha estiver errado ficar solicitando o prompt novamente
+        /*for(let emailIndex = 0; emailIndex < emails.length; emailIndex++) {
+
+            for(let senhaIndex = 0; senhaIndex < senhas.length; senhaIndex++) {
+                
+                if(email === emails[emailIndex] && senha === senhas[senhaIndex]) {
+                   
+                    alert("Usuario logado");
+                        break;
+               
+                }
+           
+            }
+        }*/
+/*
+        let index = 0;
+        
+        while(true) {
+            let email = prompt("Digite seu email");
+            let senha = prompt("Digite sua senha");
+
+            // 4. Verificar se o email existe dentro da lista de emails
+            // 5. Verificar se a senha existe dentro da lista de senhas
+            if(email === emails[index] && senha === senhas[index]) {
+                alert("Usuario logado");
+                break;
+            }
+
+            index++
+        }
+*/
         // 7. Quando o email e senha estiverem corretos deve ser exibido dentro
         // da tag <body> a frase "Usuário logado com sucesso!"
 
