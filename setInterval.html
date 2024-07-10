@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assincrono</title>
+    <script>
+        let numero = 1;
+
+        let interval = setInterval(function () {
+            console.log(numero++);
+        }, 2000);
+
+        setTimeout(function() {
+            clearInterval(interval);
+        }, 10000);
+
+
+    </script>
+</head>
+<body>
+    <h1>H1</h1>
+</body>
+</html>

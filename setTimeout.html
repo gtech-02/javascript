@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assincrono</title>
+    <script>
+        
+        // console.log("Antes do set timout");
+
+        let timeout = setTimeout(function () {
+            console.log("Primeiro set timeout");
+        }, 2000);
+
+        setTimeout(function () {
+            clearTimeout(timeout);
+            console.log("Segunda set timeout");
+        }, 1000);
+
+        
+
+        // console.log("Depois do set timeout");
+
+        // document.body.textContent = "Conteudo no body";
+
+        /*
+        setTimeout(function () {
+            console.log("Dentro do set time");
+            document.body.textContent = "Executou dentrou de 5 segundos"
+        }, 5000);
+        */
+    </script>
+</head>
+<body>
+    <h1>H1</h1>
+</body>
+</html>
