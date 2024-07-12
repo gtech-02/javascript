@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuários</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-bar {
+      margin: 20px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      margin: 10px;
+      width: 300px;
+      overflow: hidden;
+      align-items: center;
+    }
+    .card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin: 10px;
+    }
+    .card-details {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      word-break: break-word;
+    }
+    .card-details p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Usuários</h1>
+  <div class="search-bar">
+    <input type="text" id="country-filter" placeholder="Digite o país">
+    <button onclick="filterUsers()">Pesquisar</button>
+  </div>
+  <div class="card-container" id="user-cards"></div>
+
+  <script>
+    let users = [];
+
+    // URL da API
+    const apiUrl = 'https://randomuser.me/api/?results=10';
+
+    // Elemento onde os cards serão exibidos
+    const cardContainer = document.getElementById('user-cards');
+
+    // Função para buscar dados da API e exibir nos cards
+    async function fetchUsers() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        users = data.results;
+
+        displayUsers(users);
+      } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+        cardContainer.innerHTML = '<p>Erro ao carregar a lista de usuários.</p>';
+      }
+    }
+
+    // Função para exibir os usuários nos cards
+    function displayUsers(users) {
+      let cards = '';
+      users.forEach(user => {
+        cards += `
+          <div class="card">
+            <img src="${user.picture.large}" alt="Foto de ${user.name.first}">
+            <div class="card-details">
+              <p><strong>Nome:</strong> ${user.name.first} ${user.name.last}</p>
+              <p><strong>Email:</strong> ${user.email}</p>
+              <p><strong>Telefone:</strong> ${user.phone}</p>
+              <p><strong>País:</strong> ${user.location.country}</p>
+            </div>
+          </div>
+        `;
+      });
+      cardContainer.innerHTML = cards;
+    }
+
+    // Função para filtrar os usuários por país
+    function filterUsers() {
+      const country = document.getElementById('country-filter').value.toLowerCase();
+      const filteredUsers = users.filter(user => user.location.country.toLowerCase().includes(country));
+      displayUsers(filteredUsers);
+    }
+
+    // Chamando a função para buscar os usuários e exibir nos cards
+    fetchUsers();
+  </script>
+</body>
+</html>

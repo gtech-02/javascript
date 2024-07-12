@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuários</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background-color: rgb(206, 203, 203);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      margin: 10px;
+      width: 300px;
+      align-items: center;
+    }
+    .card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      justify-content: center;
+      align-items: center;
+      object-fit: cover;
+    }
+    .card-details {
+      word-break: break-all;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card-details p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Usuários</h1>
+  <div class="card-container" id="user-cards"></div>
+
+  <script>
+    // URL da API
+    const apiUrl = 'https://randomuser.me/api/?results=10';
+
+    // Elemento onde os cards serão exibidos
+    const cardContainer = document.getElementById('user-cards');
+
+    // Função para buscar dados da API e exibir nos cards
+    async function fetchUsers() {
+        // Fazendo a requisição para a API
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const users = data.results;
+
+        // Construindo os cards
+        let cards = '';
+        for (let i = 0; i < users.length; i++) {
+          let user = users[i];
+          cards += `
+            <div class="card">
+              <img src="${user.picture.large}" alt="Foto de ${user.name.first}">
+              <div class="card-details">
+                <p><strong>Nome:</strong> ${user.name.first} ${user.name.last}</p>
+                <p><strong>Email:</strong> ${user.email}</p>
+                <p><strong>Telefone:</strong> ${user.phone}</p>
+                <p><strong>País:</strong> ${user.location.country}</p>
+              </div>
+            </div>
+          `;
+        }
+
+        // Inserindo os cards no container
+        cardContainer.innerHTML = cards;
+    }
+
+    // Chamando a função para buscar os usuários e exibir nos cards
+    fetchUsers();
+  </script>
+</body>
+</html>
